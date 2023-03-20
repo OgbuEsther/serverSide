@@ -42,3 +42,21 @@ export const staffSignin = async (req: Request, res: Response) => {
     });
   }
 };
+
+//get all admins
+export const getAllStaff = async (req: Request, res: Response) => {
+  try {
+    const staff = await staffAuth.find();
+
+    return res.status(200).json({
+      message: "get all staff",
+      data: staff,
+    });
+  } catch (error: any) {
+    return res.status(400).json({
+      message: "failed to get staff",
+      data: error,
+      err: error.message,
+    });
+  }
+};
