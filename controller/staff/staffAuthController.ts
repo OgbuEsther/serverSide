@@ -2,7 +2,7 @@ import staffAuth from "../../model/staff/staffAuth";
 import mongoose from "mongoose";
 import { Request, Response } from "express";
 
-export const adminSignup = async (req: Request, res: Response) => {
+export const staffSignup = async (req: Request, res: Response) => {
   try {
     const { companyName, email, yourName, password, position } = req.body;
 
@@ -25,7 +25,7 @@ export const adminSignup = async (req: Request, res: Response) => {
   }
 };
 
-export const adminSignin = async (req: Request, res: Response) => {
+export const staffSignin = async (req: Request, res: Response) => {
   try {
     const { companyName, email, password } = req.body;
 
