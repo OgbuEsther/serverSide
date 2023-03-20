@@ -6,7 +6,7 @@ import {
 
 const adminAuthRoutes = Router();
 
-adminAuthRoutes.post("/admin/login", adminSignin);
-adminAuthRoutes.post("/admin/register", adminSignup);
+adminAuthRoutes.post("/login", adminSignin);
+adminAuthRoutes.post("/register", adminSignup);
 
 export default adminAuthRoutes;

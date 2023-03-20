@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import dbConfig from "./config/db";
 import adminAuthRoutes from "./router/admin/adminAuth";
+import staffAuthRoutes from "./router/staff/staffAuthRoutes";
 
 const PORT = process.env.PORT || 2023;
 
@@ -20,7 +21,8 @@ app.get("/", (req: Request, res: Response) => {
 //routes
 
 //admin authentication routes
-app.use("/api", adminAuthRoutes);
+app.use("/admin", adminAuthRoutes);
+app.use("/staff", staffAuthRoutes);
 
 app.listen(PORT, () => {
   console.log(`server is up on port ${PORT}`);
