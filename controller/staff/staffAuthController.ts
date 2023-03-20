@@ -60,3 +60,20 @@ export const getAllStaff = async (req: Request, res: Response) => {
     });
   }
 };
+
+export const getOneStaff = async (req: Request, res: Response) => {
+  try {
+    const staff = await staffAuth.findById(req.params.staffId);
+
+    return res.status(200).json({
+      message: "gotten one staff",
+      data: staff,
+    });
+  } catch (error: any) {
+    return res.status(400).json({
+      message: "failed to get staff",
+      data: error,
+      err: error.message,
+    });
+  }
+};
