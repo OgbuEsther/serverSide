@@ -3,6 +3,8 @@ export interface adminSignUp {
   companyEmail: string;
   yourName: string;
   password: string;
+  wallet: {}[];
+  transactionHistory: {}[];
 }
 
 export interface staffSignUp {
@@ -11,4 +13,12 @@ export interface staffSignUp {
   password: string;
   companyName: string;
   position: string;
+  wallet: {}[];
+  transactionHistory: {}[];
+  savingsPlan: {}[];
+  houseRentPlan: {}[];
+  schoolFeesPlan: {}[];
+  investmentPlan: {}[];
+  travelAndTour: {}[];
+  other: {}[];
 }

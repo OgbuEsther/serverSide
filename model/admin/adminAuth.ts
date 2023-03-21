@@ -25,6 +25,18 @@ const AdminAuth = new mongoose.Schema<adminSignUp>(
       type: String,
       required: [true, "please enter a password"],
     },
+    wallet: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "adminWallet",
+      },
+    ],
+    transactionHistory: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "adminTransactionHistory",
+      },
+    ],
   },
   { timestamps: true }
 );
