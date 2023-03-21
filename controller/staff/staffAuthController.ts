@@ -35,7 +35,7 @@ export const staffSignin = async (req: Request, res: Response) => {
       message: "Success , staff is logged in",
       data: staff,
     });
-  } catch (error) {
+  } catch (error: any) {
     return res.status(400).json({
       message: "an error occurred while logging in staff",
       data: error.message,

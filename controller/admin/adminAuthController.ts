@@ -34,7 +34,7 @@ export const adminSignin = async (req: Request, res: Response) => {
       message: "Success , admin is logged in",
       data: admin,
     });
-  } catch (error) {
+  } catch (error: any) {
     return res.status(400).json({
       message: "an error occurred while creating admin",
       data: error.message,
