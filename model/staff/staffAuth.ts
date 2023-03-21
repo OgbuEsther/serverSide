@@ -30,6 +30,54 @@ const StaffAuth = new mongoose.Schema<staffSignUp>(
     position: {
       type: String,
     },
+    wallet: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "staffWallet",
+      },
+    ],
+    transactionHistory: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "staffTransactionHistory",
+      },
+    ],
+    savingsPlan: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "staffSavingsPlan",
+      },
+    ],
+    houseRentPlan: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "staffHousePlan",
+      },
+    ],
+    schoolFeesPlan: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "staffSchoolFeesPlan",
+      },
+    ],
+    investmentPlan: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "staffSchool",
+      },
+    ],
+    travelAndTour: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "staffTravelAndTour",
+      },
+    ],
+    other: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "staffOther",
+      },
+    ],
   },
   { timestamps: true }
 );
