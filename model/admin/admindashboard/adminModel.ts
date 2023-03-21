@@ -1,11 +1,13 @@
 export interface adminWalletProps {
   balance: number;
-  walletId: string;
   walletNumber: number;
+  credit: number;
+  debit: number;
 }
 
 export interface adminTransactionProps {
-  messgage: string;
-  sender: string;
+  message: string;
+  receiver: string;
   date: string;
+  transactionReference: number;
 }

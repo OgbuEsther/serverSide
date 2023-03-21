@@ -8,12 +8,16 @@ const adminWalletSchema = new mongoose.Schema<adminWalletProps>({
     type: Number,
     required: true,
   },
-  walletId: {
-    type: String,
-  },
+
   walletNumber: {
     type: Number,
     required: true,
+  },
+  credit: {
+    type: Number,
+  },
+  debit: {
+    type: Number,
   },
 });
 

@@ -1,17 +1,30 @@
 import adminAuth from "../../model/admin/adminAuth";
 import mongoose from "mongoose";
 import { Request, Response } from "express";
-
+import bcrypt from "bcrypt";
 export const adminSignup = async (req: Request, res: Response) => {
   try {
     const { companyName, companyEmail, yourName, password } = req.body;
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(password, salt);
 
+    const dater = Date.now();
+
+    const generateNumber = Math.floor(Math.random() * 78) + dater;
+    let num = 234;
     const admin = await adminAuth.create({
       companyName,
       companyEmail,
       yourName,
-      password,
+      password: hash,
     });
+
+    /**	const createWallet = await WalletModel.create({
+			_id: regUser?._id,
+			Balance: 1000,
+			credit: 0,
+			debit: 0,
+		}); */
     return res.status(200).json({
       message: "Success",
       data: admin,
